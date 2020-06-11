@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jorge Palmares">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jorge Palmares</title>
+    <style type="text/css">
+        /*body {
+            display: flex;
+            margin: 5em;
+            line-height: 2;
+            background-color: #EEEEEE;
+            font-family: sans-serif;
+        }
+
+        .main {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+            width: 100%;
+        }*/
+
+        body {
+            display: flex;
+            font-family: sans-serif;
+            text-align: center;
+            margin: auto;
+        }
+
+        .main {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            padding: 5%;
+            flex-direction: column;
+        }
+
+        .column {
+            flex: 50%;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        iframe {
+            height: 400px;
+            width: 100%;
+            margin-top: 1%;
+        }
+
+        .bg1 {
+            background-color: #f5f8fa
+        }
+
+        .bg2 {
+            background-color: #5ca2d1
+        }
+
+        .c1 {
+            color: #1877f2
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="row bg1">
+            <div>
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxANCxAQEBAKEBANDRYNDQkJDRsIEA4NIB0iIiAdHx8kKDQsJCYxJx8fLTstMT1AMEMwIys/TT8uQDQ5OjUBCgoKDg0NFQ0NFSsZFRk3Ny4rNys3KystMC0tLSsrLSs3Ky0rLSsrKy0rLSsrKysrKy03KysrNysrLSsrKysrK//AABEIAMgAyAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAECBAUGBwj/xABAEAABAwIDBQQHBgUDBQEAAAABAAIDBBESITEFBkFRYRMicbEHIzKBkaHwFCRCcnPBFWLR4fFEUoIzQ1NjoiX/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIEAwX/xAAhEQEBAAMBAAMAAgMAAAAAAAAAAQIDESESMUETIgRhcf/aAAwDAQACEQMRAD8Ap7VZ96m/Wf5lVMC0dps+8zfrP8yq2BZlK+BLAj4EsCQADE+BH7NOI0BXLEwjVrs0uzQFXs1IRq0I1IRICoI0+BXBF0T9j0TClgTYFdMPRRMKAqFibCrRjUSxAV8KfAjdmnwJBXwJFqOWJYEwBhSwI+BLs0gr4EsCOWJYEwEI0kdrUkyaG0W/eJf1X+ZVbCtDaDPvEn6r/MqvgUhWwJ8CsBifAgK4YpdmjhikI0wriNOI7a8PJWhEuW3m2vrBGdMpJB5Kcrw56LXbdYxxbGMRGReNLodFtJ0riBiy16FYez6IzHO4aNXc10EMIa0NaAAOXFcvnXfDV1bdWu4WHXXNCMj3cXG/MosNP5eKvQ0oKm5WtOOmRntDtbu+NkZkzgM8/FXjSZ/soupCnMqd0ys+pqC2xztfMa5IMm14musT71oy02Vui5HbezzE4ubpfMa2Kf8AJWfPTz2OpglbI27SCOmaLgXGbH2iYJL54T7Tei7llnAEaEXB1yXXHLrPZwAsSwqxgTYFSQMCWBHwJFiDAwJsKsYE2BACa1JHaxJBL1cz18n6r/MoOBXqxnrpP1HeZQgxMKwjUuzVkRqYiQFVsaI2JWmxIrIkBlbWk7Clkk0wty4ZrzOGIzS8czcu6ru9/qjBAyP/AHnEW8xwXObFpbNBOpzXDZfeO2vHq9DCGMAAyVynjuoOCtUlgVx6368VmGDPRXo4+n7KMIVpgsESuhNiCYw9FbhjuPoKzHTC1/JXIi1jSQi2iydp0Ye0i2q6qek5clmVMGWam+F9vM5KXs5i3OzT8l1m7UpfTlhzMTsP/Hgqe3qMNlDgMnDCfFE3Zs2psLgSMLTfiRmP3XTXfWLbjyt7s0ixWjGmMa0M6rgTFis4ExYgwMKWBGwp8CCBDUkcMSRwNGqZ62T9R3mhhiuVDPWv/O7zTNjTCuIkVsSsNiRWxICuyJGZEjtjRWxoN5bv+8uriOEYa3Pnr+6VAyzB4J9+23r5PFo8lLZxuz3LJl9tOqDliNTxm4/yoOU4X56Lk24tmFht+6OWnCOCrUdQNDlYK85wwXB9ki/gqix6d/DJaELL5af0WfEQ08+iuQTai1reSuVGUHkjy4ZLMrIs8rLTc64vlb4KpMNfBGSPpx+8kAMXUG4PVZ2y8p4yODh7ncf3W1vEbNPx9y52J5a5hF+68OBta5/wnh4z73dGNQdGrrW3APMXUHxrUxqRYmLFbdGoFiArFiYMVgsSwoAIakj4UkQNSZnrHfnPmnbGrMkffd+Y+adsaDBaxFbGihiI1iYDaxTworWJ8KOB47voSa+oB1Drjwsn2YfVA8xe+qPv1Af4lM4uuWgXAy7lsgg0TbU7QDnh8ViyvtrXrlgElTKXnDbCDoMkKSWp1GQ8VOYSNsIxn+KQjQf1WZVU1Q6Q37Zzb917n4A0eC587+u3y5+NSk2u5rrP16rptjTGWN4zzzzzXDsp3YzmbA91xN7hd/utDaPPiPmlJ67Y5KO1dpuiIDb352sqtHU1Ur7iS1/wuOoWlvLs18oBabW4HiVy1TsGZ0YLAC/Fc4H2yT5ejK8jt4/tTWgktsPcrkUxe031HLkub2FTbQghYS7tWknFSSuxlreh1uunhiJ71iA78NrWKtE9YW81msBN7HInXJco5+bLnNsguNQRY5rsN7mXpxws8E+CwKbYhncJBIGRjN7na35Ksbxx2425SR3Gye9TRkm92A8slYcxD2DK2WlaWjutJY02wYgOKvOjWvH2MWUsvKpFiG5iuuYhliZKbmJsCtOYmLEiV8CZHwZpJwNp7O+fEpwxGc3vHxKcNT4Aw1SDVPCptagIhqfCp2SsmHlnpFpMFa5/CaIOueYy/ZUaRoEbQOWq7T0h0WOkbKBnE+x/If72XHaALFnOWxu03s6UjEB7OHyKsh+SG7iuLZMVPsQXDRdru+0dnloAuQYLvy4arsd2mXFjoR81UhfS85odkQCEP7E2+h8WmyasuxxOoGvgj0sgcBYql88FggDdMXvRXtAbb+ym02CrTSE5c0svEfFibwxh8Lgfd4rP2WB9kF9bk25BbdTGJDhcAQTmDyVagpBJ6tgcAHFou2wDeac98Lk78r+Nbd2IikaT+Ilw4ZLSLUWKIMaGgZNGEeCctW3HHk48rZl3K2KzmIZYrRaoFqaVVzFDArRaoFiQV8GaSPhSTJrOGZ8SnAT2zPinsmCThMnTBJBJJAUtsUompZWGwDozmeBGYXlshyXrVVHjjc05Y2lt/EWXle2dnSUjxHIWE2xB8ZJDm881m3z9af8AHy/FMyWQZZSkBzQJpQx2fvKx32vR+Uk9V5qiWM2bbM3uePRbuxNtSBzQ0kh4LcAdhIcqVEwSuzsdABrcrUipQJ22GQf3bZcLK5K5fOdalCat7nCYw9m7Rsd32HK/FWorwvwm+E+y7orAlDGWcWg2vnrZUPtvaXD/AMJ+aqx0x2T6azai+XD4KWLK5VKIaZqw93d+tFFvV2hE3cBzPDktnZNPZpeb97Jo/lWC8vDwY2SPwuu/sxjIbzsuppL9kzECDhFweC0aZ2sf+RlzHkFsmIUklqeeGQoFqMQo2QASFDCjkKFkgFhSU7JJBoEZnxSumOp8Uk+g6Sa6SYPdIJk10A7iuU36osdO2Uawus78h/uupQKuBssbmPza9pa7wU5zs4rDLmXXkIPyWZtGJ7nDCcwVqbUpn01Q+J2sbrX5t4H3hAYLm/Nedl5Xoz+0U6SWoiya1tz1xXWxTGqfb1YBv3XY7Zqo4kaXurdHUVQPdD7H+W+SJk644yfi+aCvc25MGejXEgoNPTVLJcMxaA72XRnGL8lvUE73gY8VxzFkWojDjfL+6rouMSgNowOWXuU3yZKp2n1rmhzS4nBotn7R5NSFvjd3ei9qTn3R4LcC4ncjebtZ5qKos2eCV7Yi7u9pGD7PiPmF2t1uwnI8vZl21IpJrpXXRzOVFOVFAIqNk90ggI2SUrJJBYJzPildRcc/emukaZ0TXyUSVFzhYngNTyR0cEumxLm9t760FDcSTte8f6el+8v+WQ9688276WqiQFlLEyAHISy/eJLdOA+aOjj16trooG4pZIom/wC6Z4iHzXnm93pOjjDoqEte/wBl1c4Xjb+UcT10Xk20NpzVMhkmkkkedZJXYzZU3vyS+z47iKd742Oe5zpXsEskkh7RznOzuUeGp4HJZ20WuiZSyD2ZKWMHxwhEhkDx14LFtx5lW3Ve4xtx1DRYW9+q16GuaAM8wuNe9wFh/hNHM8HIjXmojt/Jx6dDXMcBfXmRhQ66vjY2+h+K4ajrZr8PE5rRhjfKe9c+OQVD59Xf4o6V9o2n9V3dAC1tmUxklaNS5wBPNZ8LGxNvpbMuOS6vd6lMMDqqUYSWF8Ub+7gjAuXHqV01YfLJGzP4Y+/byTf2qDdvVT4SWmOcWkjOAiVoAJHvXom4++rK9gimLWVTRoe42ccx15heM1k5llfIb3lkdI6/Mm6hHIWuBaSC03a5pwkFae8rzn00CnuvGti+kuqgs2oDKhnFzvVSgeI194Xomxd8aKtsI5mtkP8Ap6j1D78uR9xVzLpOhumJUcX1oldMHKSjdPdAOkmCSQKpqmRNc+R0bGNuTJK4MaB4rk9q+kjZ9OCGPkqHDRlM2zb/AJjkvGdubZnqp3maWWQ4zYSOxAC/AaBZLn3UKem7W9LU7gW08MMV/wDuzO+0uHuyC4ra+89ZWH108zxwjxYGD/iMlikpro4aT5Cfrio3ySumKYSJTHRJRKZvVJNmio2PTjLEKaMtOueELjqeQxvsci04XDqu3j2vDSbKpnSk96nZhijHaPdkOH7rmNpRsqmunha8YReWNwzw/wC7JRvw77D1Z8FBDgoCJwKqUE2VjmtBlUGm5BKw8sbZ761tlxYRdwA6uWq2pa0ZWzyyzJPJYsL5ah7WRtu5xs2JuZt9cV6Puruk2nIlmtJNbInNkf5R+60atNz/AOJ2bsdc/wBhbv7ulxbUVQs1vejo3Z58C7r0Q/SZtb7NsiXO0lX92jbp3T7Xyv8AFdfN3nYRoM3LxH0sbaFTtIwtN46NvZd03vOfa+GQ9y33Ca8OR52Wy7Mu1wzikmKR+uCyqRk0PTNQZKcrHTzROKrZjJM3bbu+kGrow1jz9oiaLdlOe80dHa+a9I2FvzRVtm4+xkOXYVR7PPo7QrwQFFa+3gn8rBX02D/nopXXz9sjemso/wDpTyhv/hkPbM+BXcbD9J7XENq4sJJt9ope8Pe3+nwVTJL0oFJUtnbThqmY4ZYpG8TG7FbxGoSVB80VLvWP/OfNCRJz33fmOiEVzUV/opil9cklRmunumToMxSOiSXxQHf19H2mzoOOKljw8cgB/dPu7eEsJyLRlcXBHI9ETd2f7RsunB1gc6An+UG4+RWpS0oBANrZt9+oXXnXLrn94dnNhlE8ItTzk4Wtz7KX8TP3HRR2HSGrkIuGRxjFNUuGLs29BxJ4BdLU0YfFJETZj7Y43DFYjRw6hRipWxwNhiFmNOJ8jvae/mVw/gly7Xeb7MeFsnbv8OqfVRNMB9qOWz5Xt54ufTReu0VdHPTxzRm7JWhzDovG62kOAZadLZLsPRvMf4e9hPdZUOw35EA+a16vPGbP+3tbW+O2f4ZQSVGrvYjbpeY6fXRfO0ry9xLiS5zi4uOZJXofph26ZaiOjYe7TjtJf1iMh7h5rzlcd2Xbw8J4bFzSJTO+vBRLua4rIlBmyN+fmndNyz6qGZ1zsnDTaVNv1xzUGD4qTnD6zSAmJSD1XRWoJobL2lLTSiSGSSN4/FGbXHXmkqsQzTJhTm9p3iUO/wBaokmp8VAJw0VJMQkEzKyYhSASISBkinTFMO23Af6qVn/tDv8A5XYYLZ+Dh4rz/cN9qwi5s5hy6r0VsRe5jBmXOw+5dsL2OWX2IIyG3s67xe2HhwUBBmCbdBoAunrKPIWvYC3LJZUtMbnLIK7EMesZdpHTxzWvs6obs3Yr5nauu9rebjp5KqIcV7jXkuR3+24TDDSC4DWjtDoCQTZTcvj6rnXH11W+onklkJL5Xl7jrmUAlMExWW+uhkz8xYpYrfV0nIAJjUgMtU4UJDYdEzIuUQVG6m0JhNoRW/XBQaERoJKgCx6pKLTY8Mk6ZKcntHx+SgAkkmZFNdJJM0im+CSSARCZJJAb+5R//QYOYI+S9b3fjx1zMsmMc+2men7pkl31OWf27ZtMJBlry5lUmRsdfIX8eKSSuXtqbPHPbXeyLHawDBmvEtqVpqKiSQm4c44fy8Eklx2rxVrpiUyS4KRc2/RRDuaSSZnLsr/JBLrlJJVDIDNHYNPBJJGRJ2TtNiD1SSUApj3rC2Z+SSSSuE//2Q==">
+            </div>
+            <div class="c1">
+                <h1>Jorge Palmares</h1>
+                <ul>
+                    <li>Consulta Oftalmologia</li>
+                    <li>Cirurgia (Catarata, Glaucoma e Pálpebras)</li>
+                    <li>Cirurgia laser (LASIK)</li>
+                    <li>Contactologia</li>
+                    <li>Inflamação ocular (Alergia, Uveites e Retinites)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row bg2">
+            <h2>Hospital Lusíadas Porto</h2>
+            <div>
+                Avenida Boavista 171<br>
+                4050-115 PORTO<br>
+                Tel: 226 056 450 / 800 201 000
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.961578180539!2d-8.628142384334595!3d41.157189718196335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246507ece5dde1%3A0xe3a96e0801cc091c!2sHospital%20Lus%C3%ADadas%20Porto!5e0!3m2!1spt-PT!2spt!4v1589144272693!5m2!1spt-PT!2spt"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+        <div class="row bg1">
+            <h2>São João da Madeira (Clínica Unilabs)</h2>
+            <div>
+                Rua Inf D. Henrique 129<br>
+                3700-135 SÃO JOÃO DA MADEIRA<br>
+                Tel: 256 829 866  /  912386549
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.8569764119447!2d-8.495731984340436!3d40.896952134216235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2381fac60dc96f%3A0xab44ceb911f6d7e6!2sUnilabs!5e0!3m2!1spt-PT!2spt!4v1589145007742!5m2!1spt-PT!2spt"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>
